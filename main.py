@@ -16,7 +16,7 @@ class GPTDatasetV1(Dataset):
         ## Implementing sliding window
         for i in range(0, len(token_ids) - max_length, stride):
             input_chunk = token_ids[i:i + max_length]
-            target_chunk = token_ids[i + 1: i + max_length]
+            target_chunk = token_ids[i + 1: i + max_length + 1]
             self.input_ids.append(input_chunk)
             self.target_ids.append(target_chunk)
 
